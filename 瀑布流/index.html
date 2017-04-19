@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>title</title>
+<style type="text/css">
+	*{
+		padding: 0px;
+		margin: 0px;
+	}
+	#main{
+		width: 100%;
+		overflow: hidden;
+		border: 3px solid red;
+		position: relative;
+	}
+	#main .pic{
+		width: 300px;
+		border: 3px solid blue;
+		margin-left: 20px;
+		float: left;
+	}
+</style>
+<script type="text/javascript" src='jquery-1.7.2.min.js'></script>
+<script type="text/javascript">
+	$(function(){
+		function zhuijia(){
+			var num=Math.ceil(Math.random()*22);
+			// document.title=num;
+			var min_div=0;
+			$('#main .pic').each(function(i){
+				if($('#main .pic').eq(i).height()<$('#main .pic').eq(min_div).height()){
+					min_div=i;
+				}
+			})
+			$('#main .pic').eq(min_div).append('<img src="img/'+num+'.jpg" />');
+		}
+		$(window).scroll(function(){
+			var bottom=$('#main').height()-$(window).height()-$(document).scrollTop();	
+			if(bottom<200){
+				zhuijia();
+				zhuijia();
+				zhuijia();
+				zhuijia();
+				zhuijia();
+				zhuijia();zhuijia();zhuijia();zhuijia();zhuijia();zhuijia();zhuijia();
+			}
+		})	
+	})
+</script>
+</head>
+
+<body>
+<div id="main">
+	<div class="pic">
+		<img src="img/1.jpg" alt="" />
+		<img src="img/2.jpg" alt="" />
+		<img src="img/17.jpg" alt="" />	
+	</div>
+	<div class="pic">
+		<img src="img/22.jpg" alt="" />
+		<img src="img/4.jpg" alt="" />
+		<img src="img/9.jpg" alt="" />
+	</div>
+	<div class="pic">
+		<img src="img/6.jpg" alt="" />
+		<img src="img/14.jpg" alt="" />
+		<img src="img/16.jpg" alt="" />
+	</div>
+	<div class="pic">
+		<img src="img/11.jpg" alt="" />
+		<img src="img/12.jpg" alt="" />
+		<img src="img/13.jpg" alt="" />
+	</div>
+</div>
+</body>
+</html>
