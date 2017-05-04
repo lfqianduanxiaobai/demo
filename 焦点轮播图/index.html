@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>焦点轮播图</title>
+<link rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="jquery-1.3.1.js"></script>
+<script type="text/javascript">
+	window.onload=function(){
+
+
+		// 获取事件对象
+		var body=document.getElementById("body");
+		var con=document.getElementById('con');
+		var imgs=document.getElementsByTagName('img');
+		var left=document.getElementById('left');
+		var right=document.getElementById('right');
+		var buttons=document.getElementById('button').getElementsByTagName('li');
+		var i=1;
+		var timer;
+
+		// 左右切换的箭头显示与隐藏及其透明度设置效果
+		body.onmouseover=function(){
+			left.style.display='block';
+			right.style.display='block';
+			stop();
+		}
+		body.onmouseout=function(){
+			left.style.display='none';
+			right.style.display='none';
+			play();
+		}
+		left.onmouseover=function(){
+			left.style.opacity=0.7;
+			left.style.filter='alpha(opacity=70)';
+		}
+		left.onmouseout=function(){
+			left.style.opacity=0.3;
+			left.style.filter='alpha(opacity=30)';
+		}
+		right.onmouseover=function(){
+			right.style.opacity=0.7;
+			right.style.filter='alpha(opacity=70)';
+		}
+		right.onmouseout=function(){
+			right.style.opacity=0.3;
+			right.style.filter='alpha(opacity=30)';
+		}
+
+		// play();
+		// .style.left只能获取行内样式
+		// 控制图片的切换效果的函数
+		var animate=function(offset){
+			var newLeft=parseInt(con.style.left)+offset;
+			con.style.left=newLeft+'px';
+			// var speed=offset/10;
+			// function go(){
+			// 	setInterval(function(){
+
+			// 	},1000);
+			// }
+			if(newLeft<-5530){
+				con.style.left=0+'px';
+			}
+			if(newLeft>0){
+				con.style.left=-5530+'px';
+			}
+		}
+
+
+
+		// 控制小圆点跟随箭头移动效果的函数
+		var showbutton=function(){
+			for(var j=0;j<buttons.length;j++){
+				if(buttons[j].className=='cur'){
+				buttons[j].className='';
+				break;	
+				}
+			}
+			buttons[i-1].className='cur';
+			
+		}
+
+
+
+		// 点击箭头实现图片和小圆点同步移动的效果
+		left.onclick=function(){
+			i--;
+			if(i>8){
+				i=1;
+			}
+			if(i<1){
+				i=8;
+			}
+			showbutton();
+			animate(790);
+			
+		}
+		right.onclick=function(){
+			i++;
+			if(i>8){
+				i=1;
+			}
+			if(i<1){
+				i=8;
+			}
+			showbutton();
+			animate(-790);
+		}
+
+
+		// 点击小圆点实现小圆点和图片的同步移动
+		for(var n=0;n<buttons.length;n++){
+			buttons[n].onclick=function(en){  
+				var ev=en||window.event;//获取事件对象
+				var evli=ev.target||ev.srcElement;//获取鼠标点击小圆点的序号
+				if(evli.className=='cur'){//性能优化
+					return;
+				}
+				for(var n=0;n<buttons.length;n++){
+					if(buttons[n]==evli){
+						n=parseInt(n)+1;
+						var j=n-i;
+						offset=-790*j;
+						animate(offset);
+						i=n;
+						showbutton();
+						
+					}
+				}
+			}
+		}
+		
+		// 实现自动播放
+		function play(){
+			timer=setInterval(function(){
+				right.onclick();
+				// shanbai();
+			},2000);
+		}
+		function stop(){
+			clearInterval(timer);
+		}
+
+// shanbai();
+// 		//闪白效果
+// 		function shanbai(){
+// 			for(var a=0;a<imgs.length;a++){
+// 				// imgs[a].style.opacity=0.5;
+// 				setInterval(function(){
+// 					imgs[a].style.opacity=0.5;
+// 				},5)
+			
+// 			}
+// 		}
+
+}
+</script>
+</head>
+
+<body>
+<div id="body">
+	<div id="con" style="left:0px;">
+		<!-- <img src="img/8.jpg" alt="" /> -->
+		<img src="img/1.jpg" alt="" class='on'/>
+		<img src="img/2.jpg" alt="" />
+		<img src="img/3.jpg" alt="" />
+		<img src="img/4.jpg" alt="" />
+		<img src="img/5.jpg" alt="" />
+		<img src="img/6.jpg" alt="" />
+		<img src="img/7.jpg" alt="" />
+		<img src="img/8.jpg" alt="" />
+		<!-- <img src="img/1.jpg" alt="" /> -->
+	</div>
+	<ul id='button'>
+		<li class="cur"></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<a href="#" id="left">&lt;</a>
+	<a href="#" id="right">&gt;</a>
+</div>
+</body>
+</html>

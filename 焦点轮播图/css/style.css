@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	padding: 0px;
+	margin: 0px;
+}
+#body{
+	width: 790px;
+	height: 340px;
+	margin: 0 auto;
+	margin-top: 100px;
+	overflow: hidden;
+	z-index: 1;
+	position: relative;
+	/*border:1px solid blue;*/
+}
+#body #con{
+	width:7900px;
+	height: 340px;
+	/*border: 1px solid red;*/
+	position: absolute;
+}
+#body #con img{
+	float:left;
+}
+#body ul{
+	position: absolute;
+	top:305px;
+	left:312px;
+}
+#body ul .cur{
+	background: #DB192A;
+}
+#body ul li{
+	height: 12px;
+	width: 12px;
+	background: white;
+	border-radius: 50%;
+	list-style: none;
+	margin-right: 10px;
+	float: left;
+}
+#body a{
+	width: 30px;
+	height: 60px;
+	font-size: 20px;
+	text-decoration: none;
+	line-height: 60px;
+	text-align: center;
+	display:block;
+	background:black;
+	opacity:0.3;
+	filter:alpha(opacity=30);
+	z-index: 2;
+	color:#fff;
+	display: none;
+}
+#body #left{
+	position: absolute;
+	top:140px;
+	left:0px;
+}
+#body #right{
+	position: absolute;
+	top:140px;
+	left:760px;
+}
