@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	*{
+		padding:0px;
+		margin:0px;
+	}
+	#av{
+		position: absolute;
+		left:0px;
+		top:0px;
+	}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var av=document.getElementById('av');
+		//浏览器可视区域的宽、高度
+		var w_height=document.documentElement.clientHeight;
+		var w_width=document.documentElement.clientWidth;
+		//浮动广告的高度和宽度
+		var av_height=av.offsetHeight;
+		var av_width=av.offsetWidth;
+		//广告所能到达的最大的宽度和高度
+		var max_top=w_height-av_height;
+		var max_left=w_width-av_width;
+		var x=1,y=1;
+		//定时器
+		var timer=setInterval(fudong,1);
+		//浮动函数
+		function fudong(){
+			var old_left=av.offsetLeft;
+			var new_left=old_left+1*x;
+			var old_top=av.offsetTop;
+			var new_top=old_top+1*y;
+			if(new_top>=max_top||new_top==0){
+				y=-1*y;
+			}
+			if(new_left>=max_left||new_left==0){
+				x=-1*x;
+			}
+			av.style.left=new_left+'px';
+			av.style.top=new_top+'px';
+		}
+		av.onmouseover=function(){
+			clearInterval(timer);
+			// alert("停止移动！");
+		}
+		av.onmouseout=function(){
+			setInterval(fudong,1);
+		}
+
+
+}
+</script>
+</head>
+
+<body>
+<img src="img/av.png" id="av" />
+</body>
+</html>

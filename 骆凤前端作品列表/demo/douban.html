@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>豆瓣网</title>
+<link rel="stylesheet" href="css/douban.css" />
+<script type="text/javascript" src='js/jquery-1.11.0.js'></script>
+<script type="text/javascript">
+	window.onload=function(){
+		var min=document.getElementById('mid');
+		var con=document.getElementById('con');
+		var download=document.getElementById('download');
+		var shaoma=document.getElementById('shaoma');
+		var cover=document.getElementById('cover');
+		var datu=document.getElementById('datu');
+		cover.onmouseover=function(){
+			datu.style.display='block';
+		}
+		datu.onmouseout=function(){
+			datu.style.display='none';
+		}
+
+	}
+</script>
+</head>
+
+<body>
+<!-- 头部 -->
+<div id="header">
+	<a href="www.douban.com" class='logo'></a>
+	<form action="">
+		<input type="text" class='search' placeholder="书籍、电影、音乐、小组、小站、成员"/>
+		<a href="#" class="search1"></a>
+	</form>
+	<div class="right">
+		<a href="" class="logo1"></a>
+		<a href="" class="logo2"></a>
+		<a href="" class="logo3"></a>
+		<a href="" class="logo4"></a>
+		<a href="" class="logo5"></a>
+		<a href="" class="logo6"></a>
+		<a href="" class="logo7"></a>
+		<a href="" class="logo8"></a>
+	</div>
+</div>
+<!-- 头部结束 -->
+
+<!-- 登录区域 -->
+<div id="mid">
+	<div id="con">
+		<p class="left_ad"></p>
+		<div id="download">
+			<p class="douban">豆瓣 4.0</p>
+			<p class="jiesao">我们的精神角落</p>
+			<a href="" class="xiazai">下载豆瓣APP</a>
+			<div id="cover"></div>
+				<a href="#" id="shaoma">
+					<img src='img/lv_ma.png'/>
+				</a>
+					<div id="datu">
+						<img src="img/hei_ma.png" alt="" height="160px" width="160px" />
+						<span class="word">iOS / Android 扫码直接下载</span>
+					</div>
+			   </div>
+		<div class="denglu">
+			<form action="">
+				<input type="text" class="yonghuming" value='邮箱/手机号'/>
+				<input type="text" class="mima" value='密码' />
+				<input type="checkbox" class="rem" value="1" />
+				<span class="me">记住我</span>
+			</form>
+			<a href=""class="zhanghu">登录豆瓣</a>
+			<a href="" class="zhuce">注册账号</a>
+			<a href="" class="wechat"></a>
+			<a href="" class="weibo"></a>
+		</div>
+	</div>
+	
+</div>
+<!-- 登录区域结束 -->
+<!-- 广告条 -->
+<div class="ad"></div>
+<!-- 广告条结束 -->
+
+<!-- 内容区块 -->
+<div id="leirong">
+	<div class="left">
+		<h2 class='title'>热点内容 ·····</h2>
+		<p class='more'>(<a href="#">更多</a>)</p>
+		<ul class='pic'>
+			<li>
+				<a href="#"><img src="img/11q.jpg" alt="" /></a>
+				<a href="#">新加坡动物园</a>
+				<span class='num'>40张图片</span>
+			</li>
+			<li>
+				<a href="#"><img src="img/21.jpg" alt="" /></a>
+				<a href="#">新加坡动物园</a>
+				<span class='num'>40张图片</span>
+			</li>
+			<li>
+				<a href="#"><img src="img/31.jpg" alt="" /></a>
+				<a href="#">新加坡动物园</a>
+				<span class='num'>40张图片</span>
+			</li>
+			<li>
+				<a href="#"><img src="img/41.jpg" alt="" /></a>
+				<a href="#">新加坡动物园</a>
+				<span class='num'>40张图片</span>
+			</li>
+		</ul>
+	</div>
+	<div class="mid">
+		<p class='fam'><a href='#'>内向</a></p>
+		<p class='fan'>
+			great grey owl的日记
+			前两天跟学生聊到了她在学校里的困难。 
+			这个学生是跟我练中文的两姐妹中小的那个，...
+		</p>
+		<ul>
+			<li class='fam'><a href="#">究极留美子的200000000部历程</a></li>
+			<li class='fam'><a href="#">究极漫画家高桥留美子的2000000</a></li>
+			<li class='fam'><a href="#">究极漫画家高桥留美子的</a></li>
+			<li class='fam'><a href="#">究极漫画家高桥留美子</a></li>
+			<li class='fam'><a href="#">究极高桥留美子的200000000部历程</a></li>
+			<li class='fam'><a href="#">究极漫画家高桥留美子的200000000部历程</a></li>
+			<li class='fam'><a href="#">究极漫画家的部历程</a></li>
+			<li class='fam'><a href="#">究极漫画家高桥留00000部历程</a></li>
+			<li class='fam'><a href="#">究极漫画家高桥留美部历程</a></li>
+		</ul>
+	</div>
+	<div class="right">
+		<a href="#"><img src="img/51.jpg" alt="" width="265px" height="111px" /></a>
+		<h2 class='title'>线上活动 ·····</h2>
+		<p class='more'>(<a href="#">更多</a>)</p>
+		<p class='fam'><a href='#'>来一句王家卫式的话</a></p>
+		<p class='fan'>
+			时间：2月25日 - 5月24日
+		</p>
+		<p class='fan'>
+			1439人参加
+		</p>
+		<p class='fam'><a href='#'>给我你的照片，我给你画一张肖像吧</a></p>
+		<p class='fan'>
+			时间：2月8日 - 5月7日
+		</p>
+		<p class='fan'>
+			1552人参加
+		</p>
+	</div>
+</div>
+<!-- 内容区块结束 -->
+</body>
+</html>

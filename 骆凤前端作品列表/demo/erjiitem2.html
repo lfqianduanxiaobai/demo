@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>title</title>
+<style type="text/css">
+	*{
+		padding: 0px;
+		margin: 0px;
+		text-decoration: none;
+	}
+	#left{
+		border:1px solid blue;
+		width: 250px;
+		height: 180px;
+		background: #6E6568;
+		margin: 100px 100px;
+		position: relative;
+	}
+	#left ul li{
+		width: 250px;
+		height: 30px;
+		list-style: none;
+
+	}
+	#left ul li a{
+		margin-left: 10px;
+		color:#FFFFFF;
+	}
+	#left ul li:hover{
+		background: #999395;
+	}
+	#left ul li #right{
+		width: 400px;
+		height: 180px;
+		border: 1px solid blue;
+		font-size: 13px;
+		font-family: 微软雅黑;
+		position: absolute;
+		top:0px;
+		left:250px;
+		display: none;
+	}
+</style>
+<script type="text/javascript" src='js/jquery-1.11.0.js'></script>
+<script type="text/javascript">
+	$(function(){
+		$('#left ul li').mouseover(function(){
+			$('#right').show();
+		})
+		$('#left ul li').mouseout(function(){
+			$('#right').hide();
+		})
+	})
+</script>
+</head>
+
+<body>
+<div id="left">
+	<ul>
+		<li><span>
+			<a href="#">家用电器</a>
+			</span><a href="#">平板电视</a>
+			<div id="right">
+				<p class="con1">
+					完美世界小说简介：《完美世界小说》由起点超人气作者'辰东'最新巨作,讲述的是　一粒尘可填海，一根草斩尽日月星辰，弹指间天翻地覆。 群雄并起，万族林立，诸圣争霸，乱天动地。问苍茫大地，谁主沉浮？！ 一个少年从大荒中走出，一切从这里开始…… 《完美世界小说》文笔流畅、洒脱、新颖，情节内容绝对一流,所以我们要多多支持'辰东'写的更好更精彩,支持《完美世界小说》请您购买正版、或多多帮助宣传、推荐本书,好的小说,有了您们的支持才能更精彩! 完美世界小说小说网每天第一时间更新《完美世界小说》最新章节,欢迎收藏。
+				</p>
+			</div>
+		</li>
+		<li><span><a href="#">手机 / 数码</a></span><a href="#">单反相机</a></li>
+		<li><span><a href="#">电脑办公 </a></span><a href="#">平板电脑</a></li>
+		<li><span><a href="#">汽车用品</a></span><a href="#">汽车装饰</a></li>
+		<li><span><a href="#">母婴 / 玩具</a></span><a href="#">尿裤湿巾</a></li>
+		<li><span><a href="#">营养保健</a></span><a href="#">营养健康</a></li>
+	</ul>
+</div>
+
+</body>
+</html>

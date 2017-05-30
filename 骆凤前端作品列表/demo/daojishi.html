@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	#daojishi{
+		font-size: 30px;
+		margin: 300px 400px;
+	}
+	#daojishi span{
+		color:red;
+	}
+	
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var daojishiObj=function(){
+			var now_time=new Date();//获取本地电脑时间
+		var future_time=new Date(2017,9,1,14,38,00);//创建一个未来的时间
+		var	diff_time=future_time-now_time;//获取毫秒时间差
+
+		var day=parseInt(diff_time/(24*60*60*1000));//获得天数
+		var daytime=document.getElementById('daytime');
+		daytime.innerHTML=day;
+		diff_time-=day*24*60*60*1000;//转换天数后剩余的毫秒数
+
+		var hour=parseInt(diff_time/(60*60*1000));//获得小时
+		diff_time-=hour*60*60*1000;//转换小时后剩余的毫秒数
+		var hourtime=document.getElementById('hourtime');
+		hourtime.innerHTML=hour;
+
+		var min=parseInt(diff_time/(60*1000));//获得分钟数
+		diff_time-=min*60*1000;//转换分钟后剩余的毫秒数
+		var mintime=document.getElementById('mintime');
+		mintime.innerHTML=min;
+
+
+		var second=parseInt(diff_time/1000);//获得秒数
+		var sectime=document.getElementById('sectime');
+		// diff_time-=sccond;
+		sectime.innerHTML=second;
+		}
+		daojishiObj();
+		window.setInterval(function(){
+			daojishiObj();
+		},1000);
+	}
+</script>
+</head>
+
+<body>
+<p id="daojishi">距离2017年10月1日优惠时间结束还有<span id='daytime'>0</span>天<span id="hourtime">0</span>小时<span id='mintime'>0</span>分<span id='sectime'>0</span>秒</p>
+</body>
+</html>

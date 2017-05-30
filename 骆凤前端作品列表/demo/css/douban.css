@@ -1,0 +1,463 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	padding: 0px;
+	margin: 0px;
+}
+a{
+	text-decoration: none;
+	color:black;
+}
+/*头部*/
+#header{
+	width: 950px;
+	height: 90px;
+	margin: 0 auto;
+	position: relative;
+}
+#header .logo{
+	width: 154px;
+	height: 30px;
+	position: absolute;
+	top:30px;
+	left:0px;
+	background: url(../img/logo.png) no-repeat;
+}
+#header .search{
+	width: 270px;
+	height: 30px;
+	border: 1px solid #C3C3C3;
+	text-indent: 6px;
+	font-size: 14px;
+	line-height: 30px;
+	position: absolute;
+	top:30px;
+	left: 183px;
+}
+#header .search1{
+	width: 13px;
+	height: 13px;
+	position: absolute;
+	top:40px;
+	left:432px;
+	background: url(../img/search.png) no-repeat;
+}
+#header .right{
+	width: 463px;
+	height: 90px;
+	margin-left: 488px;
+	position: relative;
+}
+#header .right .logo1{
+	width: 40px;
+	height: 20px;
+	position: absolute;
+	top:40px;
+	left:0px;
+	background: url(../img/right_logo.png) no-repeat;
+}
+#header .right .logo2{
+	width: 40px;
+	height: 20px;
+	position: absolute;
+	top:40px;
+	left:60px;
+	background: url(../img/right_logo.png) no-repeat -60px 0px;
+}
+#header .right .logo3{
+	width: 40px;
+	height: 20px;
+	position: absolute;
+	top:40px;
+	left:120px;
+	background: url(../img/right_logo.png) no-repeat -120px 0px;
+}
+#header .right .logo4{
+	width: 40px;
+	height: 20px;
+	position: absolute;
+	top:40px;
+	left:180px;
+	background: url(../img/right_logo.png) no-repeat -180px 0px;
+}
+#header .right .logo5{
+	width: 40px;
+	height: 20px;
+	position: absolute;
+	top:40px;
+	left:240px;
+	background: url(../img/right_logo.png) no-repeat -240px 0px;
+}
+#header .right .logo6{
+	width: 40px;
+	height: 20px;
+	position: absolute;
+	top:40px;
+	left:300px;
+	background: url(../img/right_logo.png) no-repeat -300px 0px;
+}
+#header .right .logo7{
+	width: 42px;
+	height: 20px;
+	position: absolute;
+	top:40px;
+	left:360px;
+	background: url(../img/right_logo.png) no-repeat -360px 0px;
+}
+#header .right .logo8{
+	width: 42px;
+	height: 20px;
+	position: absolute;
+	top:40px;
+	left:420px;
+	background: url(../img/right_logo.png) no-repeat -420px 0px;
+}
+/*头部结束*/
+
+/*登录区域*/
+#mid{
+	width: 100%;
+	margin: 0 auto;
+	height: 178px;
+	background: url(../img/bac.png) no-repeat;
+	background-size: 100% 100%;
+
+}
+#mid #con{
+	width: 950px;
+	height: 178px;
+	margin: 0 auto;
+	position: relative;
+}
+#mid #con .left_ad{
+	width:390px;
+	height: 178px;
+	background: url(../img/bac1.png) no-repeat;
+
+}
+#mid #con #download{
+	width: 287px;
+	height: 178px;
+	position: absolute;
+	top:0px;
+	left:394px;
+}
+#mid #con #download .douban{
+	margin-top: 37px;
+	margin-left: 37px;
+	font-weight: 600;
+	font-size: 25px;
+}
+#mid #con #download .jiesao{
+	margin-left: 37px;
+	margin-top: 10px;
+	font-size: 12px;
+	letter-spacing: 10px;    /*调节字体间距*/
+}
+#mid #con #download .xiazai{
+	width: 115px;
+	height: 30px;
+	display: block;
+	background: #00B51D;
+	color:#FFFFFF;
+	margin-left: 37px;
+	margin-top: 23px;
+	font-size: 12px;
+	border-radius: 2px;
+	line-height: 30px;
+	text-align: center;
+}
+#mid #con #download #cover{
+	width: 35px;
+	height:35px;
+	position: absolute;
+	top:118px;
+	left:160px;
+	z-index: 4;
+	opacity: 0;
+	filter:alpha(opacity=0);
+}
+#mid #con #download #shaoma{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top:118px;
+	left:160px;
+	border: 1px solid #48AA0D;
+}
+#mid #con #download #datu{
+	width: 200px;
+	height: 225px;
+	z-index: 12;
+	display: none;
+	border: 1px solid #696937;
+	background: #FFFFFF;
+	position: absolute;
+	top:118px;
+	left:160px;
+}
+#mid #con #download #datu img{
+	margin-top:20px;
+	margin-left: 20px;
+}
+#mid #con #download #datu .word{
+	font-size: 12px;
+	color:#A7A8AB;
+	display: block;
+	margin-left: 20px;
+}
+#mid #con #download #shaoma img{
+	width: 28px;
+	height: 28px;
+	margin:1px 1px;
+}
+#mid #con .denglu{
+	width: 270px;
+	height: 178px;
+	position: absolute;
+	top:0px;
+	left:678px;
+}
+#mid #con .denglu .yonghuming{
+	width: 268px;
+	height: 30px;
+	margin-top: 30px;
+	color:#E4E4E4;
+	border: 1px solid #DBE5DB;
+	text-indent: 10px;
+}
+#mid #con .denglu .mima{
+	width: 268px;
+	height: 30px;
+	margin-top: 5px;
+	color:#E4E4E4;
+	border: 1px solid #DBE5DB;
+	text-indent: 10px;
+}
+#mid #con .denglu .zhanghu{
+	width: 130px;
+	height: 30px;
+	display: block;
+	font-size: 12px;
+	line-height: 30px;
+	text-align: center;
+	background: #30A080;
+	border-radius: 2px;
+	border: 1px solid #3BA687;
+	color:#FFFFFF;
+	position: absolute;
+	top:105px;
+	left:0px;
+}
+#mid #con .denglu .zhuce{
+	width: 130px;
+	height: 30px;
+	color:#78BBB9;
+	border-radius: 2px;
+	display: block;
+	font-size: 12px;
+	line-height: 30px;
+	text-align: center;
+	position: absolute;
+	top:105px;
+	left:138px;
+	border: 1px solid #3BA687;
+}
+#mid #con .denglu .zhanghu:hover{
+	background: #2A8C70;
+}
+#mid #con .denglu a.zhuce:hover{
+	color:#2A8C70;
+}
+#mid #con .denglu .rem{
+	position: absolute;
+	left:0px;
+	top:145px;
+}
+#mid #con .denglu .me{
+	position: absolute;
+	left:15px;
+	top:143px;
+	font-size: 12px;
+	color: #666;
+}
+#mid #con .denglu .wechat{
+	width: 14px;
+	height: 11px;
+	display: block;
+	position: absolute;
+	top:145px;
+	left:233px;
+	background: url(../img/wechat.png) no-repeat;
+}
+#mid #con .denglu .weibo{
+	width: 14px;
+	height: 11px;
+	display: block;
+	position: absolute;
+	top:145px;
+	left:253px;
+	background: url(../img/weibo.png) no-repeat;
+}
+/*登录区域结束*/
+/*广告条*/
+.ad{
+	width: 950px;
+	height:90px;
+	margin: 0 auto;
+	background: url(../img/ad.png) no-repeat;
+}
+/*广告条结束*/
+
+/*内容区块1*/
+#leirong{
+	width: 950px;
+	height: 500px;
+	margin: 0 auto;	
+	position: relative;
+}
+#leirong .left{
+	width: 380px;
+	height: 500px;
+	position: absolute;
+	left:0px;
+	top:0px;
+}
+#leirong .left a:hover{
+	background: #3377aa;
+	color:#FFFFFF;
+}
+#leirong .left .more{
+	position: absolute;
+	top:0px;
+	left:100px;
+}
+#leirong .mid{
+	width: 300px;
+	height: 500px;
+	position: absolute;
+	top:0px;
+	left:380px;
+}
+#leirong .mid a:hover{
+	background: #3377aa;
+	color:#FFFFFF;
+}
+
+#leirong .right{
+	width: 265px;
+	height:500px;
+	position: absolute;
+	top:0px;
+	right: 0px;
+}
+#leirong .right a:hover{
+	background: #3377aa;
+	color:#FFFFFF;
+}
+#leirong .pic{
+
+	position: absolute;
+	top:0px;
+	left:0px;
+}
+#leirong .pic li{
+	width: 170px;
+	height: 160px;
+	float:left;
+	font-size: 12px;
+	margin-right: 10px;
+	margin-top: 35px;
+}
+#leirong .pic li a:hover{
+	background: #3377aa;
+	color:#FFFFFF;
+}
+#leirong .pic li .num{
+	color:#999999;
+}
+#leirong .mid .fam{
+	padding-top: 10px;
+	
+}
+#leirong .mid .fan{
+	color:#969696;
+	font-size: 12px;
+}
+#leirong .right .more{
+	position: absolute;
+	top:111px;
+	right:105px;
+}
+#leirong .right .fam{
+	padding-top: 10px;
+}
+#leirong .right .fan{
+	color:#969696;
+	font-size: 12px;
+	padding-top: 12px;
+}
+/*内容区块1结束*/
+/*电影区域*/
+#movie{
+	width: 100%;
+	height: 770px;
+	background: #F7F7F7;
+	border: 2px solid orange;
+}
+#movie .movie_con{
+	width: 950px;
+	height: 770px;
+	border: 3px solid red;
+	margin: 0 auto;
+	position: relative;
+}
+#movie .movie_con .movie_left{
+	width: 140px;
+	height: 770px;
+	border: 1px solid red;
+	position: absolute;
+	top:0px;
+	left:0px;
+}
+#movie .movie_con .movie_mid{
+	height: 770px;
+	width: 550px;	
+	border: 1px solid black;
+	position: absolute;
+	top:0px;
+	left:140px;
+}
+#movie .movie_con .movie_right{
+	height: 770px;
+	width: 260px;
+	border: 2px solid purple;
+	position: absolute;
+	top:0px;
+	left:690px;
+}
+/*电影区域结束*/
+
+
+
+
+
+
+/*公共部分*/
+h2.title{
+	color:#057A26;
+	font-size: 15px;
+	font-weight: 400;
+}
+a{
+	font-size: 12px;
+	color:#3377AA;
+}
+/*a:hover{
+	background: #3377aa;
+	color:#FFFFFF;
+}*/
+ul li{
+	list-style: none;
+}
+/*公共部分结束*/

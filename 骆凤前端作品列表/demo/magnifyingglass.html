@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>购物的放大镜效果</title>
+<style type="text/css">
+	*{
+		padding:0px;
+		margin: 0px;
+	}
+	#left #cover{
+		width: 430px;
+		height: 430px;
+		/*background: black;*/
+		/*float: left;*/
+		position: absolute;
+		top:0px;
+		left:0px;
+		z-index: 3;
+		opacity:0;
+		filter:alpha(opacity=0);
+	}
+	#left{
+		width: 430px;
+		height: 430px;
+		border: 1px solid blue;
+		background: url(img/430.jpg) no-repeat;
+		float:left;
+		position:relative;
+	}
+	#left #fangkuai{
+		width: 215px;
+		height:215px;
+		background: white;
+		opacity: 0.6;
+		filter:alpha(opacity=60);
+		position:absolute;
+		left: 0px;
+		top:0px;
+		display: none;
+	}
+	#right{
+		width: 430px;
+		height: 430px;
+		margin-left: 440px;
+		border: 1px solid blue;
+		overflow: hidden;  /*隐藏超出right的div区域的图片*/
+		/*background: url(img/800.jpg) no-repeat;*/
+		position: relative;
+		display: none;
+	}
+	#right #right_ad{
+		/*width: 430px;
+		height: 430px;*/
+		/*margin-left: 440px;*/
+		position: absolute;
+		top:0px;
+		left:0px;
+	}
+
+
+</style>
+<script type="text/javascript">
+	
+	window.onload=function(){
+		var fangkuai=document.getElementById('fangkuai');
+		var cover=document.getElementById('cover');
+		var right_ad=document.getElementById('right_ad');
+		var left_div=document.getElementById('left');
+
+		left_div.onmouseover=function(){
+			fangkuai.style.display='block';
+			right.style.display='block';
+		}
+
+		left_div.onmouseout=function(){
+			fangkuai.style.display='none';
+			right.style.display='none';
+		}
+
+
+		cover.onmousemove=function(e){
+			// alert(3);
+			var en=e||window.event;
+			var mouse_left=en.offsetX||en.layerX;
+			var mouse_top=en.offsetY||en.layerY;
+			if(mouse_left<=107){
+				mouse_left=107;
+			}
+			if(mouse_left>=323){
+				mouse_left=323;
+			}
+			if(mouse_top<=107){
+				mouse_top=107;
+			}
+			if(mouse_top>=323){
+				mouse_top=323;
+			}
+			fangkuai.style.left=mouse_left-107+'px';
+			fangkuai.style.top=mouse_top-107+'px';
+
+
+			//右侧
+			var right_left=(mouse_left-107)*(-2);
+			var right_top=(mouse_top-107)*(-2);
+			// alert();
+			right_ad.style.left=right_left+'px';
+			right_ad.style.top=right_top+'px';
+		}
+
+
+	}
+</script>
+</head>
+
+<body>
+
+<div id="left">
+	<div id="fangkuai"></div>
+	<div id="cover"></div>
+</div>
+
+
+<div id="right">
+	<img src="img/800.jpg" alt="" id="right_ad" />
+</div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	*{
+		padding: 0px;
+		margin: 0px;
+	}
+	#box{
+		width: 730px;
+		height: 454px;
+		margin: 0 auto;
+		/*border: 1px solid red;*/
+		position: relative;
+	}
+	#box img{
+		position: absolute;
+		left:0px;
+		top: 0px;
+		display: none;  /*让6张图片全部默认不显示*/
+	}
+	#box img.cur{
+		display: block; /*让id为cur的图片显示出来*/
+	}
+	#box ul li{
+		float:left;
+		list-style: none;
+		background: #3E3E3E;
+		width: 18px;
+		height: 18px;
+		font-size: 12px;
+		margin-right: 10px;
+		text-align: center;
+		color:#FFFFFF;
+		border-radius: 50%;
+		/*采用css3给加的圆形背景，或者加一个圆形的背景图*/
+	}
+	#box ul li.cur{
+		background:#B61B1F;
+	}
+	#box ul{
+		position: absolute;
+		top:420px;
+		left:280px;
+	}
+</style>
+
+<script type="text/javascript">
+window.onload=function(){
+	var box=document.getElementById('box');
+	var imgs=document.getElementsByTagName('img');
+	var lis=document.getElementsByTagName('li');
+	// 鼠标未移入时的自动轮播
+	var i=0;
+	var timer=setInterval(qiehuan,1000);
+	function qiehuan(){//给图片和数字添加的定时器轮播
+		i++;
+		if(i==6){
+			i=0;
+		}
+
+		for(var j=0;j<imgs.length;j++){//让所有显示过得图片都隐藏，只需清空class即可
+			imgs[j].className='';
+			// imgs[j].style.display='none';
+		}
+
+		
+		for(var j=0;j<lis.length;j++){
+
+			lis[j].className='';
+
+		}
+		
+		 imgs[i].className='cur';
+		//通过i的变化，将其各个图片的class都变成第一张图片的效果
+		
+		lis[i].className='cur';
+	}	
+
+
+	// 鼠标移入显示指定图片
+	for(var j=0;j<lis.length;j++){
+		lis[j].onmouseover=function(e){
+		clearInterval(timer);//鼠标移入停掉定时器
+		var en=e||window.event;//获取事件对象
+		var newLi=en.srcElement||en.target;
+		//获取目标源对象，即鼠标落在li的第几号位置上
+		for(var j=0;j<lis.length;j++){
+			if(lis[j]==newLi){
+			i=j;
+			}
+		}
+		//执行上面定时器的部分内容，让特定图片和li的样式都显示
+		for(var j=0;j<imgs.length;j++){//让所有显示过得图片都隐藏，只需清空class即可
+			imgs[j].className='';
+			// imgs[j].style.display='none';
+		}
+		for(var j=0;j<lis.length;j++){
+
+			lis[j].className='';
+		}
+		
+		 imgs[i].className='cur';
+		//通过i的变化，将其各个图片的class都变成第一张图片的效果
+		lis[i].className='cur';
+		}	
+	
+
+		lis[j].onmouseout=function(){
+		var timer=setInterval(qiehuan,1000);
+		}
+	}
+
+}
+
+</script>
+
+</head>
+
+<body>
+<div id="box">
+	<img src="img/1.jpg" class='cur'/>
+	<img src="img/2.jpg" />
+	<img src="img/3.jpg" />
+	<img src="img/4.png" />
+	<img src="img/5.png" />
+	<img src="img/6.png" />
+	<ul>
+		<li class='cur'>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+	</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+/*全局样式*/
+*{
+	padding:0px;
+	margin:0px ;
+}
+a{
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+/*布局样式*/
+#box{
+	margin: 0 auto;
+	border: 12px solid  #EEEEEE;
+	width: 360px;
+	border-radius:5px;
+	margin-top: 12px;
+}
+#box .item{
+	width: 360px;
+	margin-bottom: 2px;
+	margin-left: 5px;
+	margin-top: 3px;
+}
+#box .item .header{
+	width: 335px;
+	height: 35px;
+	display: block;
+	line-height: 35px;
+	padding-left: 15px;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: 800;
+	background: #99CC00;
+}
+#box .item .xiang{
+	display: none;
+}
+#box .xiang li{
+	width:335px;
+	height: 30px;
+	display: block;
+	background: #77CCFF;
+	margin-top: 2px;
+	padding-left: 15px;
+}
+#box .xiang li a{
+	line-height: 30px;
+	font-size: 14px;
+	color: #FFFFFF;
+	font-weight: 700;
+}
+#box .xiang li a:hover{
+	text-decoration: underline;
+}
+.buttom{
+	width: 350px;
+	height: 30px;
+	margin:0 auto;
+	position: relative;
+}
+.buttom .word{
+	color:#999999;
+	font-size: 12px;
+	width: 290px;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	top:0px;
+	left:0px;
+}
+.buttom .dibu{
+	width: 62px;
+	height: 22px;
+	display: block;
+	position: absolute;
+	top:2px;
+	right: 0px;
+}
+

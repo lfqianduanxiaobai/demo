@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>title</title>
+<style type="text/css">
+	*{
+		padding: 0px;
+		margin: 0px;
+	}
+	#top{
+		position: relative;
+	}
+	#top #top1{
+		width: 900px;
+		height: 200px;
+		margin: 0 auto;
+		background:#666666; 
+	}
+	#top #top2{
+		width: 900px;
+		height: 50px;
+		margin: 0 auto;
+		background: red;
+	}
+	#top #pic{
+		width: 900px;
+		height: 50px;
+		background: red;
+		position: fixed;
+		top:0px;
+		left:0px;
+		z-index: 999;
+		display: none;
+	}
+	#top #top3{
+		width: 900px;
+		height: 600px;
+		margin: 0 auto;
+		background:#77CCFF;
+	}
+	#top #top4{
+		width: 900px;
+		height: 700px;
+		margin: 0 auto;
+		background: #ccc;
+	}
+</style>
+<script type='text/javascript'>
+	window.onload=function(){
+	var top=document.getElementById('top');
+	var Left=document.documentElement.clientWidth;
+	var pic=document.getElementById('pic');
+//	给窗口加一个滚动条事件
+	window.onscroll=function(){
+		//判断当滚动条滚动的页面距离大于200,则显示pic的div块
+		if(document.documentElement.scrollTop>=200){
+			pic.style.display='block';
+			var left=(Left-900)/2;
+			pic.style.left=left+'px';	
+		}
+		//当小于200时,隐藏其div块
+		if(document.documentElement.scrollTop<200){
+			pic.style.display='none';
+		}
+	}
+}
+</script>
+</head>
+<body>
+<div id="top">
+	<div id="top1"></div>
+	<div id="pic"></div>
+	<div id="top2"></div>
+	<div id="top3"></div>
+	<div id="top4"></div>
+</div>
+</body>
+</html>

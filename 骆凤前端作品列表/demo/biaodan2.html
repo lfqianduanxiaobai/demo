@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	*{
+		padding: 0px;
+		margin:0px;
+	}
+	#box{
+		width: 600px;
+		height:350px;
+		border:1px solid red;
+		margin: 0 auto;
+	}
+	.xingxing{
+		color:red;
+	}
+	#uname,#psw,#rpsw,#mail,#num{
+		width: 230px;
+		height:25px;
+	}
+	#lvse,#cor,#fam,#gou,#right{
+		font-weight: 800;
+		color:green;
+		display:none;
+	}
+	#hongse,#wor,#diff,#wu,#worry{
+		font-weight: 800;
+		color:red;
+		display:none;
+	}
+</style>
+
+<script type="text/javascript">
+ window.onload=function(){
+ 	var uname=document.getElementById('uname');
+   	var lvse=document.getElementById('lvse');
+   	var hongse=document.getElementById('hongse');
+// 	用户名必须输入的是4-12的字母、数字、下划线
+   	uname.onblur=function(){
+   		var reg0=/^\w{4,12}$/i;
+   		var result0=reg0.test(uname.value);
+   		if(result0){
+   			lvse.style.display='inline';
+   			hongse.style.display='none';
+   		}else{
+   			lvse.style.display='none';
+   			hongse.style.display='inline';
+   		}
+   }
+   	
+   	var psw=document.getElementById('psw');
+   	var cor=document.getElementById('cor');
+   	var wor=document.getElementById('wor');
+   	//密码验证
+   	psw.onblur=function(){
+   		var reg1=/^\w{4,9}|\d{4,9}$/i;
+   		var result1=reg1.test(psw.value);
+   		if(result1){
+   			cor.style.display='inline';
+   			wor.style.display='none';
+   		}else{
+   			cor.style.display='none';
+   			wor.style.display='inline';
+   		}
+   	}
+   	
+   	//确认密码，只需确保和上面的密码一样即可
+   	var rpsw=document.getElementById('rpsw');
+   	var fam=document.getElementById('fam');
+   	var diff=document.getElementById('diff');
+   	rpsw.onblur=function(){
+   		if(rpsw.value==psw.value){
+   			fam.style.display='inline';
+   			diff.style.display='none';
+   		}else{
+   			fam.style.display='none';
+   			diff.style.display='inline';
+   		}
+   	}
+   	
+   	//qq邮箱的验证
+   	var mail=document.getElementById('mail');
+   	var gou=document.getElementById('gou');
+   	var wu=document.getElementById('wu');
+   	mail.onblur=function(){
+   		var reg1=/^\d{6,11}@qq.com$/i;
+   		var result1=reg1.test(mail.value);
+   		if(result1){
+   			gou.style.display='inline';
+   			wu.style.display='none';
+   		}else{
+   			gou.style.display='none';
+   			wu.style.display='inline';
+   		}
+   	}
+
+   	//手机号码验证
+   	var num=document.getElementById('num');
+   	var right=document.getElementById('right');
+   	var worry=document.getElementById('worry');
+   	num.onblur=function(){
+   		var reg1=/^\d{11}$/i;
+   		var result1=reg1.test(num.value);
+   		if(result1){
+   			right.style.display='inline';
+   			worry.style.display='none';
+   		}else{
+   			right.style.display='none';
+   			worry.style.display='inline';
+   		}
+   	}
+}
+</script>
+
+</head>
+
+<body>
+	<!-- 表单的布局 -->
+	<span class='xingxing'>*</span>用户名: <input type='text' id="uname" placeholder="请输入4-12个字母、数字、下划线"/>
+	<span id="lvse">恭喜，该用户名合法！</span>
+	<span id="hongse">该用户名不合法！</span>
+	<br /><br />
+	<span class='xingxing'>*</span>密码: <input type="password" id='psw' placeholder="请输入4-9个英文字母或数字"/>
+	<span id="cor">密码格式正确</span>
+	<span id="wor">密码格式不正确</span>
+	<br /><br />
+	<span class='xingxing'>*</span>确认密码: <input type='password' id="rpsw" placeholder="再次输入密码"/>
+	<span id="fam">两次输入密码相同</span>
+	<span id="diff">两次输入密码不同，请重新输入</span>
+	<br /><br />
+	<span class='xingxing'>*</span>	qq邮箱: <input type='text'  id="mail" placeholder="请输入邮箱"/>
+	<span id="gou">邮箱格式正确</span>
+	<span id="wu">邮箱格式错误</span>
+	<br /><br />
+	<span class='xingxing'>*</span>手机号码: <input type='text' id="num" placeholder="请输入手机号"/>
+	<span id="right">正确！！！</span>
+	<span id="worry">号码错误！！！</span>
+	<br /><br /><br />
+	<input type="button" value='提交并注册' id='submit'/>
+</body>
+</html>

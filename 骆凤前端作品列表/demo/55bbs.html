@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>55BBS论坛-中国第一女性购物消费打折分享社区-55BBS-我爱购物网</title>
+<style type="text/css">
+	*{
+		padding:0px;
+		margin: 0px;
+	}
+	#box{
+		width: 300px;
+		height: 504px;
+		border:1px solid #E0E0E0;
+		margin-left: 10px;
+		margin-top: 10px;
+		/*overflow: hidden;*/
+		/*position: relative;*/
+	}
+	#topbox{
+		width: 294px;
+		height:433px;
+		margin:3px;
+		/*border: 1px solid red;*/
+	}
+	#topbox #longbox{
+		width:2058px;
+		height:433px;
+		/*border: 1px solid black; */
+		/*float:left;*/
+		margin: 0px;
+		position: relative;
+	}
+	#topbox #longbox img{
+		float:left;
+	}
+	#box #bottombox{
+		width: 294px;
+		height: 71px;
+		margin-left: 3px;
+	}
+	#box #bottombox ul li{
+		list-style: none;
+		float:left;
+	}
+	#redian{
+		width: 390px;
+		height:50px;
+		position: relative;
+		/*border: 2px solid red;*/
+		overflow: hidden;
+	}
+	#redian #word{
+		font-size: 12px;
+		line-height: 50px;
+	}
+	#redian #gundong{
+		width: 360px;
+		height: 100px;
+		/*border: 2px solid blue;*/
+		position: absolute;
+		top:0px;
+		right: 0px;
+	}
+	#redian #gundong ul li{
+		list-style: none;
+		line-height: 50px;
+	}
+	#redian #gundong ul li a{
+		text-decoration: none;
+		color:black;
+		font-size: 12px;
+	}
+	#redian #gundong ul li a:hover{
+		text-decoration: underline;
+		color:orange;
+	}
+</style>
+<script type="text/javascript" src='jquery-1.7.2.min.js'></script>
+<script type="text/javascript">
+	$(function(){
+		//轮播图的实现
+		$('#bottombox ul li').css('opacity','0.5');//改变图片的透明度
+		$('#bottombox ul li').mouseover(function(){
+			$(this).css('opacity','1');//鼠标移入图片不透明
+			var num=$(this).index('#bottombox ul li');//获取鼠标滑入的事件源对象的序号
+			$(this).siblings().css('opacity','0.5');
+			var result=num*-1*294+'px';
+			$('#longbox').stop();//清掉longbox身上所有的动画，避免动画时间的积累
+			$('#longbox').animate({'left':result},200);//实现鼠标移入上下区域同步轮播
+		})	
+			
+			setInterval(function(){//定时器实现上下区域同步自动轮播
+				
+			},1000)
+		
+
+		//热点消息(无缝轮播)效果的实现
+		setInterval(function(){
+			$('#gundong ul li').last().height(0);
+			$('#gundong ul').prepend($('#gundong ul li').last());
+			$('#gundong ul li').first().animate({'height':'50px'},1000);
+
+		},2000);
+		
+
+
+	})
+</script>
+</head>
+
+<body>
+
+<!-- 轮播区域 -->
+<div id="box">
+	<div id="topbox">
+		<div id="longbox">
+			<img src="img/1.jpg" alt="" />
+			<img src="img/2.jpg" alt="" />
+			<img src="img/3.jpg" alt="" />
+			<img src="img/4.jpg" alt="" />
+			<img src="img/5.jpg" alt="" />
+			<img src="img/6.jpg" alt="" />
+			<img src="img/7.jpg" alt="" />
+		</div>
+		
+	</div>
+	<div id="bottombox">
+		<ul>
+			<li class='cur'><img src="img/8.jpg"></li>
+			<li><img src="img/9.jpg"></li>
+			<li><img src="img/10.jpg"/></li>
+			<li><img src="img/11.jpg"/></li>
+			<li><img src="img/12.jpg"/></li>
+			<li><img src="img/13.jpg"/></li>
+			<li><img src="img/14.jpg"/></li>
+		</ul>
+	</div>
+</div>
+
+	<!-- 热点区域 -->
+	<div id="redian">
+		<p id="word">热点：</p>
+		<div id="gundong">
+			<ul>
+				<li>
+					<a href='#'>【空瓶记】2017年的第一波空瓶</a>
+ 					<a href='#'>又到了一年一度的樱花节（劫）</a></li>
+				<li>
+					<a href='#'>年龄30+ 混合皮的良心推荐</a>
+					<a href='#'>晒旅拍游记，赢拍立得&料理机大奖</a>
+				</li>
+			</ul>
+		</div>
+	</div>	
+
+</body>
+</html>

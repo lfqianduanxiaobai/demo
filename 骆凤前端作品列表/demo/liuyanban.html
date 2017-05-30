@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	#top{
+		width: 500px;
+		height:200px;
+		border:1px solid black;
+		background:gray;
+		overflow: auto;
+		/*margin: 0 auto;*/
+	}
+	#min{
+		/*margin:0 auto;*/
+		width: 498px;
+		height:200px;
+		overflow: auto;
+		border:1px solid red;
+	}
+	#left{
+		height:20px;
+		width: 245px;
+	}
+	#right{
+		height:20px;
+		width: 245px;
+	}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var name=document.getElementById('left');
+		var tel=document.getElementById('right');
+		var topObj=document.getElementById('top');
+		var minObj=document.getElementById('min');
+		var enObj=document.getElementById('en');
+		enObj.onclick=function(){
+
+			if(minObj.value==' '||name.value==' '||tel.value==' '){
+				alert("填写内容不能为空");
+				return false;
+			}
+			var aObj=document.createElement("p");
+			aObj.innerHTML=name.value;
+			topObj.appendChild(aObj);
+
+			var bObj=document.createElement('p');
+			bObj.innerHTML=tel.value;
+			topObj.appendChild(bObj);
+
+			var pObj=document.createElement("p");//创建一个新的标签
+			pObj.innerHTML=minObj.value;
+			topObj.appendChild(pObj);
+			
+			minObj.value=" ";
+			name.value=" ";
+			tel.value=" ";
+
+		}
+	}
+</script>
+</head>
+
+<body>
+<!-- 模拟类似qq消息的发送 -->
+<div id="top">
+	<p>屌丝：嗨！美女你好啊！</p>
+	<p>美女：不想理你，走开。</p>
+	<p>屌丝：别这样呀</p>
+</div>
+<br />
+
+<input type="text" id="left" placeholder="请输入姓名"/>
+<input type="text" id="right" placeholder="请输入您的联系方式" />
+<br /><br />
+<textarea id="min"></textarea>
+<input type='button' value="发送留言" id='en'/>
+</body>
+</html>

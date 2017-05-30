@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>小球平抛运动-骆凤</title>
+<style type="text/css">
+	*{
+		padding: 0px;
+		margin: 0px;
+	}
+	#ball{
+		position:absolute;
+		top:25px;
+		left:-20px;
+	}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		//获取事件源
+		var bnt=document.getElementById('bnt');
+		var ball=document.getElementById('ball');
+		var speed=1;
+		bnt.onclick=function(){
+			var timer=setInterval(function(){
+			speed++;
+			//获取小球原始left，top值
+			var old_top=ball.offsetTop;
+			var old_left=ball.offsetLeft;
+			//小球新位置的值
+			var new_top=old_top+speed;
+			var new_left=old_left+4;
+			//限制小球的高度
+			if(new_top>=458){
+				new_top=458;
+				speed*=-0.9;
+			}
+//			确定让小球停下来的条件
+			if(speed>-1&&speed<1){
+				speed=0;
+			}
+			if(new_top==458&&speed==0){
+					clearInterval(timer);
+				}
+			ball.style.top=new_top+'px';
+			ball.style.left=new_left+'px';
+		},10)
+	}	
+}
+</script>
+</head>
+
+<body>
+<input type="button" value="Run" id="bnt"/>
+<img src="img/ball.jpg"  id="ball" />
+</body>
+</html>

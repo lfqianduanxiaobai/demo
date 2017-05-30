@@ -1,0 +1,37 @@
+/*全局样式*/
+*{
+	padding:0px;
+	margin:0px ;
+}
+a{
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+.box{
+	margin: 0 auto;
+	width: 200px;
+	height: 300px;
+	position: relative;
+}
+.box .key{
+	width: 200px;
+	height: 30px;
+	position: absolute;
+	top:5px;
+	left:28px;
+}
+.box .key li{
+	float:left;
+	margin-right: 5px;
+}
+.box .kuang{
+	width: 100px;
+	height: 100px;
+	border: 1px solid #999999;
+	position: absolute;
+	top: 50px;
+	left:50px;
+	background: #77CCFF;
+}

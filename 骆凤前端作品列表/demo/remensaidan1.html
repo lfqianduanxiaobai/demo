@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>热门晒单{从上往下}-骆凤</title>
+<style type="text/css">
+	*{
+		padding: 0px;
+		margin: 0px;
+	}
+	#box{
+		width: 200px;
+		height: 100px;
+		margin: 0 auto;
+		margin-top: 200px;
+		border: 1px solid black;
+		/*将超出区域的部分隐藏*/
+		overflow: hidden;
+	}
+	#box ul li{
+		width: 200px;
+		height: 50px;
+		border: 1px solid blue;
+		color:white;
+		text-align: center;
+		line-height: 50px;
+		font-family: 微软雅黑;
+		font-weight: 800;
+		list-style: none;
+	}
+
+</style>
+<script type="text/javascript" src='js/jquery-1.11.0.js'></script>
+<script type="text/javascript">
+	$(function(){
+		//滚动方式从上往下（实现原理将最下面的一单的高度变成0，然后插到ul的最前面，在缓慢的恢复它原有的高度）
+		 setInterval(function(){
+		 	//1、首先找到li的最后一项，并把高度变成0
+			$('li').last().css('height','0px');
+			//2、将其插入到ul的第一项
+			$('ul').prepend($('li').last());
+			//3、缓慢的将其高度增加到原有的高度
+			$('li').first().animate({'height':'50px'},500);
+		 },1000);
+			
+	})
+</script>
+</head>
+
+<body>
+<div id="box">
+
+<ul>
+	<li style='background:red'>第一单</li>
+	<li style='background:orange'>第二单</li>
+	<li style='background:purple'>第三单</li>
+	<li style='background:grey'>第四单</li>
+	<li style='background:pink'>第五单</li>
+</ul>
+	
+</div>
+</body>
+</html>
